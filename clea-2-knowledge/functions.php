@@ -5,7 +5,7 @@
  *
  * @package    clea-2-mairie
  * @subpackage Functions
- * @version    0.9.0
+ * @version    1.0
  * @since      0.1.0
  * @author     Anne-Laure Delpech <ald.kerity@gmail.com>  
  * @copyright  Copyright (c) 2015 Anne-Laure Delpech
@@ -36,7 +36,7 @@ function clea_mairie_theme_setup() {
 	add_action( 'wp_enqueue_scripts', 'clea_mairie_enqueue_scripts' );
 
 	/* Register and load styles. */
-	add_action( 'wp_enqueue_scripts', 'clea_mairie_enqueue_styles', 4 ); 
+	add_action( 'wp_enqueue_scripts', 'clea_knowledge_enqueue_styles', 4 ); 
 
 	/* Set content width. */
 	hybrid_set_content_width( 700 );	
@@ -97,7 +97,7 @@ function clea_mairie_remove_cleaner_gallery() {
 
 	
  
-function clea_mairie_enqueue_styles() {
+function clea_knowledge_enqueue_styles() {
 
 	// feuille de style pour l'impression
 	wp_enqueue_style( 'print', get_stylesheet_directory_uri() . '/css/print.css', array(), false, 'print' );
@@ -105,6 +105,11 @@ function clea_mairie_enqueue_styles() {
 	// feuille de style pour le co-marquage service public.fr
 	wp_enqueue_style( 'co-marquage', get_stylesheet_directory_uri() . '/css/co-marquage.css', array(), false, 'all' );
 
+	/*
+	* enqueue font awesome 4.0 from CDN
+	* @since  1.0.0
+	*/
+	wp_enqueue_style( 'font-awesome', 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css' );
 }
 
 function clea_mairie_enqueue_scripts() {
