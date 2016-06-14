@@ -1,0 +1,26 @@
+/**************************************
+* complément de style pour le plugin emendo
+***************************************/
+
+#comarquage .co-home {
+    display: none;
+}
+
+
+#comarquage #cm-content {
+	float: none;
+    width: 100%;
+}
+
+#comarquage #cm-sidebar {
+    float: none;
+    width: 100%;
+}
+
+#cm-sidebar #sp-actualite {
+    display: none;
+}
+
+#cm-sidebar ul li:before {
+    display: none;
+}

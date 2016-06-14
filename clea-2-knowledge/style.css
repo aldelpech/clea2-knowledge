@@ -1,0 +1,601 @@
+/**
+ * Theme Name:  Knowledge (child of StarGazer)
+ * Theme URI:   
+ * Description: Un thème pour un site "impact"
+ * Version:     1.0.0
+ * Author:      Anne-Laure Delpech
+ * Author URI:  http://parcours-performance.com
+ * Tags:        
+ * Text Domain: 
+ * License:     GNU General Public License v2.0 or later
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * Template:    stargazer
+ */
+ 
+
+/*
+
+
+* TABLE OF CONTENTS:
+
+ * 		0 - colors
+ * 		1 - Header and Footer
+ * 		2 - Main and Content
+ * 		3 - Media
+ * 		4 - Sidebars and Widgets
+ * 		5 - Comments Template
+ * 		6 - Menus
+ * 		7 - Plugins
+
+
+/********************************************************************************************************
+ * 0 - colors
+ *
+ * This section changes the colors of different items.
+ ********************************************************************************************************/
+
+/* ====== colors used for this website ====== */
+/*
+* couleur primaire : jaune marron #dcc02a
+* couleur secondaire : violet #702192
+* troisème couleur : jaune vert #d4da2a
+* couleur foncée de police : violet foncé #220a60
+*/
+
+.entry-content a, .entry-summary a, .comment-content a {
+    color: #dcc02a !important;
+}
+
+
+/********************************************************************************************************
+ * 1 - Header and Footer
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ====== jetpack site logo  ====== */
+
+img.site-logo.attachment-medium {
+    max-width: 120px;
+    margin: 1%;
+}
+
+header#header .wrap {
+    /* max-width: 1075px; */
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.site-header .wrap {
+    /* https://css-tricks.com/using-flexbox/ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+aside#sidebar-inside-header {
+    /* https://css-tricks.com/using-flexbox/ */
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    flex-direction: row-reverse;
+    justify-content: space-around;
+	align-items: center;
+}
+
+/* mega menu social (header and footer) */
+
+#mega-menu-wrap-social #mega-menu-social > li.mega-menu-item > a.mega-menu-link {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 20px;
+}
+
+
+/* ====== search form in header  ====== */
+
+input.search-text {
+    width: 75%;
+    display: inline-block;
+}
+
+.widget_search input[type=submit] {
+    display: inline-block;
+    width: 20%;
+	color: #dcc02a ;
+	background: #dcc02a url(http://upload.wikimedia.org/wikipedia/commons/5/55/Magnifying_glass_icon.svg) no-repeat center 100%;
+	background-size: 40% 100%;
+	padding: 10px 1.5rem;
+    margin-left: -5px;
+}
+
+.site-header .widget_search>.search-form {
+    padding: 0; 
+    margin: 0;
+}
+
+.site-header ul#menu-reseaux-sociaux {
+    margin: 0;
+}
+
+
+
+
+
+
+/* ====== Header image  ====== */
+
+.header-image {
+	/* width: 100%; */
+	max-width: 1800 px;
+	max-height: 480px;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+}
+
+section.clea-header-image {
+    width: 100%;
+    background-color: #dcc02a;
+}
+.display-header-text #header {
+    border-bottom: 0; 
+}	
+
+
+
+
+/********************************************************************************************************
+ * 2 - Main and Content
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ====== full width layouts ====== */
+.layout-2c-l #container>.wrap,
+.layout-2c-l #footer>.wrap, 
+.layout-2c-l #menu-primary {
+    max-width: 100%;
+}
+
+@media only screen and (min-width: 800px) {
+	.layout-2c-l #menu-primary>.wrap {
+		max-width: 1075px;
+	}
+
+	#main {
+		max-width: 1075px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
+}
+
+/* ====== front page "tous les articles" ====== */
+h3.widget-title.font-headlines.articles>.wrap::before {
+    content: "\f425";
+}
+
+/* ====== liste d'articles ====== */
+	.bloc-article {				
+		display: inline-block;
+		background: #fff;
+		margin: 0 0 1.5em;
+		width: 100%;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		box-shadow: 1px 1px 2px 0 #ccc;
+		border: 2px dotted #220a60;
+		padding: 4px;
+		border-radius: 15px;
+		-moz-border-radius: 15px;
+		-webkit-border-radius: 15px;
+	}
+	
+	/* style items */
+
+	.bloc-article pre {
+		white-space: pre-wrap;
+		padding: 5px;
+	}
+
+	.bloc-article img { 
+		  height: 150px; 
+		  width: auto;
+		  float: left; 
+		  /* border-radius: 50%; */
+		  margin: 5px 15px 5px 0 ;
+		  /* 
+		  -webkit-shape-outside: circle(40%);
+		  -webkit-shape-margin: 10px;
+		  shape-outside: circle(40%);
+			shape-margin: 10px;
+		  clip-path: circle(35%);
+		  transition: shape-outside 1s;
+		  */
+	}
+
+	.bloc-article img:hover{
+		/*
+		-webkit-shape-outside: circle(45%);
+		-webkit-shape-margin: 1px;
+		shape-outside: circle(45%);
+		shape-margin: 1px;
+		*/
+		height: 170px;
+		width: auto;
+	}
+
+	.bloc-article a img {
+		padding: 0; 
+		background: none; 
+		border: 1px solid #dcc02a !important;
+	}
+
+	.bloc-article .entry-summary {
+		font-size: 95%;
+		line-height: 1.4;
+		padding: 0 5px 5px 5px;
+	}
+
+	.bloc-article .entry-meta{
+		margin-bottom: 5px;
+		
+	}
+
+	.bloc-article .entry-title a {
+		text-decoration: none;
+		color: #220a60 ;
+		font-size: 85%;
+		padding: 0;
+	}
+
+	.bloc-article  h3.entry-title  {
+		margin-bottom: 6px;
+		margin-top: 6px;
+		line-height: 1.4;
+		font-weight: 600;
+	}
+
+	.bloc-article .categories {
+		background-color:  #d3da2a;
+		border-radius: 15px 5px 5px 15px;
+		-moz-border-radius: 15px 5px 5px 15px;
+		-webkit-border-radius: 15px 5px 5px 15px;
+		padding: 8px;
+		float: right;
+		margin-right: -15px;
+		font-size: 90%;
+	}
+
+	.bloc-article .categories  a {
+		color: #220a60;
+		/* font-size: 110%; */
+		font-weight: 600 ;
+		text-decoration: none;
+		font-variant: small-caps;
+	}
+
+	.bloc-article .categories a::after {
+		content: "\f061";
+		font-family: FontAwesome;
+		color: #220a60;
+		margin-left: 6px;
+		margin-right: 0;;
+	}
+
+	.bloc-article .categories:hover,
+	.bloc-article .categories:hover a,
+	.bloc-article .categories:hover a::after {
+		color: #220a60 ;
+		background-color: #ffeb80;
+	}
+
+	.bloc-article .entry-byline {
+		display:inline-block;
+		line-height: 45px;
+		height: 45px;
+		margin-bottom: 0 !important;
+		/* margin-left: -15px; */
+	}
+
+	/* 
+	.bloc-article .entry-byline::before{
+	   content: '';
+	   display: inline-block;
+	   height:45px;
+	   width:30px;
+	   border-radius: 10px 50px 50px 10px;
+	   -moz-border-radius: 10px 50px 50px 10px;
+	   -webkit-border-radius: 10px 50px 50px 10px;
+	   background-color: #dcc02a;
+		vertical-align: bottom;
+		margin-right: 10px;
+	}
+	*/
+
+/* ====== Do not display author ====== */	
+	.ltr .entry-author {
+		display: none !important;
+	}
+
+
+
+/********************************************************************************************************
+ * 3 - Media
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ====== images ====== */
+img {
+
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+}
+
+figcaption.wp-caption-text.font-secondary {
+    position: initial;
+}
+
+.ltr .wp-caption .wp-caption-text {
+    margin-right: 0;
+    text-align: center;
+}
+
+
+/********************************************************************************************************
+ * 4 - Sidebars and Widgets
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ======  ====== */
+/* ====== abonnez-vous à la newsletter ====== */
+h3.widget-title.font-headlines.newsletter>.wrap::before {
+    content: "\f465";
+}
+
+/* style the "abonnez-vous" widget in primary sidebar */
+
+#mc_embed_signup {
+    /* background: #dcc02a; */
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+    border-radius: 10px;
+	padding-bottom: 10px;
+	border: 3px dotted #220a60;
+}
+
+#mc_embed_signup h2 {
+    text-align: center;
+}
+
+.mc-field-group label {
+    display: none;
+}
+
+
+.mc-field-group input {
+    border: 1px solid #220a60;
+    width: 90%;
+    background: #f3f3f3;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    margin-bottom: 8px;
+    padding: 5px;
+}
+
+input#mc-embedded-subscribe {
+    box-sizing: border-box;
+    width: 60%;
+    display: block;
+    margin-left: auto;
+	margin-right: auto;
+    background-color: #220a60;
+    color: #dcc02a;
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+p.home-subscribe {
+	font-size: 80%;
+    line-height: 1.1;
+    font-style: italic;
+    margin-top: 15px;
+    width: 90%;
+    text-align: center;
+    text-align: -webkit-center;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+p.mc-subscribe {
+    text-align: -webkit-center;
+    text-align: center;
+}
+
+/* ====== Subsidiary sidebar ====== */
+#sidebar-subsidiary {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/********************************************************************************************************
+ * 5 - Comments Template
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ======  ====== */
+
+/********************************************************************************************************
+ * 6 - Menus
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ====== secondary menu ====== */
+
+@media only screen and (min-width: 800px) {
+	#menu-secondary {
+		width: 95%;
+		max-width: 95%;
+		margin: 0px 0;
+	}
+}
+
+/* ======  ====== */
+
+/********************************************************************************************************
+ * 7 - Plugins 
+ *
+ * .
+ ********************************************************************************************************/
+
+/* ====== Mega menu full width settings ====== */
+
+
+@media only screen and (min-width: 800px) {
+    #mega-menu-wrap-secondary #mega-menu-secondary {
+		max-width: 1075px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+/* ====== Affichage events sur page d'accueil ====== */
+
+#sidebar-before-front-page ol.tribe-list-widget {
+	display: -moz-box;        
+	display: -ms-flexbox;   
+	display: -webkit-flex;   
+	display: flex;   
+    flex-direction: row;
+    margin: 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media only screen and (min-width: 800px) {
+	
+	#sidebar-before-front-page .tribe-events-list-widget ol li  {
+		flex-basis: 23%;
+		margin-bottom: 0;
+	}
+
+}
+
+@media only screen and (max-width: 800px) {
+	
+	#sidebar-before-front-page .tribe-events-list-widget ol li  {
+		flex-basis: 48%;
+		margin-bottom: 0;
+	}
+
+}
+
+#sidebar-before-front-page .tribe-events-list-widget .tribe-events-event-image {
+	margin-bottom: 0; 
+    text-align: center; 
+}
+
+#sidebar-before-front-page .tribe-events-list-widget .tribe-events-event-image img {
+    max-width: 70%;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget h6.tribe-event-title {
+    font-size: 1.2em;
+	border-bottom: none;
+    padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget section.resume-event p {
+	margin: 0 0 5px 0;
+	font-size: 90%;
+    line-height: 1.1;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget .tribe-event-duration {
+    font-size: 80%;
+    font-weight: 600;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget .tribe-event-organisateur {
+    font-size: 80%;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget p.tribe-events-widget-link {
+    padding: 8px 20px 8px 20px;
+    background-color: #220a60;
+    text-align: center;
+    border-radius: 15px;
+    float: right;
+	margin-bottom: 0;
+	margin-right: 3%;
+}
+
+#sidebar-before-front-page .tribe-events-list-widget p.tribe-events-widget-link a {
+    color: #ffeb80;
+}
+
+/* ====== The events Calendar - month view style ====== */
+
+.tribe-events-month #tribe-events-header .tribe-events-sub-nav .tribe-events-nav-next a, .tribe-events-month #tribe-events-header .tribe-events-sub-nav li {
+    display: block;
+	font-size: 110%;
+}
+
+#tribe-events-bar {
+    display: none;
+}
+
+/* ====== Jetpack share buttons ====== */
+
+div.sharedaddy .sd-content ul li {
+	position: initial !important;
+    padding-left: 0 !important;
+    display: inline-block !important;
+}
+
+div.sharedaddy .sd-content {
+    display: inline-block;
+    margin-left: 10px;
+	width: 70%;
+}
+
+
+a.share-icon::after {
+    content: "" !important;
+    display: none !important;
+}
+		
+
+
+
+
+
+
+
