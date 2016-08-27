@@ -53,11 +53,17 @@
  * .
  ********************************************************************************************************/
 
-/* ====== jetpack site logo  ====== */
+@media only screen and (min-width: 800px) {
+		
+	#branding {
+		width: 80%;
+		max-width: none ;
+	}
+}
 
-img.site-logo.attachment-medium {
-    max-width: 120px;
-    margin: 1%;
+.ltr.display-header-text .custom-logo {
+	position: relative;
+	top: 30px;
 }
 
 header#header .wrap {

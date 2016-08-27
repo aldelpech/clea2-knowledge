@@ -19,9 +19,18 @@
 
 			<header <?php hybrid_attr( 'header' ); ?>>
 				<div class="wrap">
-					<?php if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
-						jetpack_the_site_logo();
+					<!-- Wordpress custom logo -->
+					<?php if ( function_exists( 'get_custom_logo' ) ) {
+						
+						// the theme must support the custom_logo 
+						the_custom_logo();
 					}
+					// No custom logo set in appearance / customization -->
+					if (!has_custom_logo()) {
+						?>
+						<h1><?php bloginfo('name'); ?></h1>
+						<?php
+					} 
 					
 					if ( display_header_text() ) : // If user chooses to display header text. ?>
 

@@ -24,6 +24,13 @@ add_action( 'wp_enqueue_scripts', 'clea_mairie_remove_cleaner_gallery', 99 );
 remove_filter('get_the_excerpt', 'wp_trim_excerpt');
 add_filter('get_the_excerpt', 'wpse_custom_wp_trim_excerpt');
 
+# add WooCommerce compatibility
+/* https://docs.woothemes.com/document/third-party-custom-theme-compatibility/ */
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_action('woocommerce_before_main_content', 'clea_knowledge_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'clea_knowledge_end', 10);
+
 
 function clea_mairie_theme_setup() {
 
@@ -45,10 +52,13 @@ function clea_mairie_theme_setup() {
 	add_theme_support( 'featured-header' );
 	add_theme_support( 'post-thumbnails' ); 
 
-	// Add support for the Site Logo plugin and the site logo functionality in JetPack
-	// https://github.com/automattic/site-logo
-	// http://jetpack.me/
-	add_theme_support( 'site-logo', array( 'size' => 'medium' ) );
+	// Add support for the Wordpress custom-Logo 
+	// see https://codex.wordpress.org/Theme_Logo
+	add_theme_support( 'custom-logo', array(
+		'height'      => 150,
+		'width'       => 116,
+		'flex-width'  => true,
+	) );
 	
 	// see http://themehybrid.com/board/topics/custom-header-extended-with-custom-child-theme-of-stargazer
 	add_filter( 'jetpack_photon_override_image_downsize', '__return_true' );
@@ -208,5 +218,12 @@ if ( ! function_exists( 'wpse_custom_wp_trim_excerpt' ) ) :
   
 endif; 
 
+function clea_knowledge_wrapper_start() {
+ echo '<section id="content" class="content">';
+}
+
+function clea_knowledge_wrapper_end() {
+ echo '</section>';
+}
 
 ?>
