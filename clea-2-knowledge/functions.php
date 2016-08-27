@@ -55,8 +55,8 @@ function clea_mairie_theme_setup() {
 	// Add support for the Wordpress custom-Logo 
 	// see https://codex.wordpress.org/Theme_Logo
 	add_theme_support( 'custom-logo', array(
-		'height'      => 150,
-		'width'       => 116,
+		'height'      => 78,
+		'width'       => 150,
 		'flex-width'  => true,
 	) );
 	
